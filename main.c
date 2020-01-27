@@ -11,6 +11,17 @@ struct Items
 
 typedef struct Items objet;
 
+void affichage(objet liste[6]){
+
+    printf("-------------------------------------------------------------------------------\nListe des objet!\n");
+    for (int i = 0; i <  sizeof(liste) ; i++)
+    {
+        printf("L'objet : %s est en %d d'exmplaire(s) au prix de %d gold\n",liste[i].nom,liste[i].nombre,liste[i].prix);
+    }
+     printf("-------------------------------------------------------------------------------\n");
+    
+
+}
 
 
 int main(void){
@@ -26,6 +37,8 @@ int main(void){
     objet talisment = {"talisment",1,6000};
     
     objet liste_objet[6] = {carte,potion,pomme,epee,bouclier,talisment};
+
+    affichage(liste_objet);
 
     return 0;
 }
