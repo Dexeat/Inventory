@@ -65,11 +65,10 @@ int main(void){
     objet liste_objet[6] = {carte,potion,pomme,epee,bouclier,talisment};
     inventory inv[999];
 
-    affichage(liste_objet);
 
     while (achat)
     {
-        printf("Menu: 1 Magasin, 2 Achat, 3 Inventaire");
+        printf("Menu: 1 Magasin, 2 Achat, 3 Inventaire ");
         scanf("%d\n",&choix);
         menu(choix,inv,liste_objet,gold);
     }
