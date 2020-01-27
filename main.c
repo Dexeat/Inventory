@@ -11,7 +11,6 @@ struct Items
 
 
 typedef struct Items objet;
-typedef struct Items inventory;
 
 void affichage(objet liste[6]){
 
@@ -25,9 +24,9 @@ void affichage(objet liste[6]){
 
 }
 
-int menu(inventory inv[999],objet liste[6],int*gold){
+int menu(objet inv[999],objet liste[6]){
     int choix;
-    printf("Menu: 1 Magasin, 2 Achat, 3 Inventaire ");
+    printf("\nMenu: 1 Magasin, 2 Achat, 3 Inventaire: ");
     scanf("%d",&choix);
     printf("\n");
 
@@ -38,7 +37,7 @@ int menu(inventory inv[999],objet liste[6],int*gold){
     
     if (choix == 2)
     {
-        achat(*gold,liste,inv);
+        achat(liste,inv);
     }
     if (choix == 3)
     {
@@ -47,9 +46,11 @@ int menu(inventory inv[999],objet liste[6],int*gold){
     
 }
 
-void achat(int *gold,objet liste[6],inventory inv[999]){}
+void achat(objet liste[6],objet inv[999]){
+    printf("vous avez %d Gold !\nQuel objets voulez vous acheter ? et en quel quantiter ?\n");
+}
 
-void inventaire(inventory inv[999]){}
+void inventaire(objet inv[999]){}
 
 
 int main(void){
@@ -68,12 +69,12 @@ int main(void){
     objet talisment = {"talisment",1,6000};
     
     objet liste_objet[6] = {carte,potion,pomme,epee,bouclier,talisment};
-    inventory inv[999];
+    objet inv[999];
 
 
     while (achat)
     {
-        menu(inv,liste_objet,gold);
+        menu(inv,liste_objet);
     }
     
 
