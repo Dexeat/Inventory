@@ -24,11 +24,29 @@ void affichage(objet liste[6]){
 
 }
 
-void achat(objet liste[6],objet inv[999],int pointergold){
-    printf("vous avez %d Gold !\nQuel objets voulez vous acheter ? et en quel quantiter ?\n",pointergold);
+void achat(objet liste[6],objet inv[999],int gold){
+    int objet,number_of_item;
+    printf("vous avez %d Gold !\nQuel objets voulez vous acheter ? et en quel quantiter ?\n",gold);
+    scanf("%d",&objet);
+    scanf("%d",&number_of_item);
+
+    if (/* argent > prix * quantiter */)
+    {
+        /* 
+            ajoute objet > inventaire 
+            retir la quantiter d'objet
+            retir les gold
+        */
+    }
+    
 }
 
-void inventaire(objet inv[999]){}
+void inventaire(objet inv[999]){
+    /*
+        affiche l'inventaire
+        for (int i = 0; i <  sizeof(inv) ; i++){}
+    */
+}
 
 
 int menu(objet inv[999],objet liste[6],int * pointergold){
