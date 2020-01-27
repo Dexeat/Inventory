@@ -25,7 +25,12 @@ void affichage(objet liste[6]){
 
 }
 
-int menu(int choix,inventory inv[999],objet liste[6],int*gold){
+int menu(inventory inv[999],objet liste[6],int*gold){
+    int choix;
+    printf("Menu: 1 Magasin, 2 Achat, 3 Inventaire ");
+    scanf("%d",&choix);
+    printf("\n");
+
     if (choix == 1)
     {
         affichage(liste);
@@ -68,9 +73,7 @@ int main(void){
 
     while (achat)
     {
-        printf("Menu: 1 Magasin, 2 Achat, 3 Inventaire ");
-        scanf("%d\n",&choix);
-        menu(choix,inv,liste_objet,gold);
+        menu(inv,liste_objet,gold);
     }
     
 
