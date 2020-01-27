@@ -24,7 +24,14 @@ void affichage(objet liste[6]){
 
 }
 
-int menu(objet inv[999],objet liste[6]){
+void achat(objet liste[6],objet inv[999],int pointergold){
+    printf("vous avez %d Gold !\nQuel objets voulez vous acheter ? et en quel quantiter ?\n",pointergold);
+}
+
+void inventaire(objet inv[999]){}
+
+
+int menu(objet inv[999],objet liste[6],int * pointergold){
     int choix;
     printf("\nMenu: 1 Magasin, 2 Achat, 3 Inventaire: ");
     scanf("%d",&choix);
@@ -37,7 +44,7 @@ int menu(objet inv[999],objet liste[6]){
     
     if (choix == 2)
     {
-        achat(liste,inv);
+        achat(liste,inv,*pointergold);
     }
     if (choix == 3)
     {
@@ -46,11 +53,7 @@ int menu(objet inv[999],objet liste[6]){
     
 }
 
-void achat(objet liste[6],objet inv[999]){
-    printf("vous avez %d Gold !\nQuel objets voulez vous acheter ? et en quel quantiter ?\n");
-}
 
-void inventaire(objet inv[999]){}
 
 
 int main(void){
@@ -74,7 +77,7 @@ int main(void){
 
     while (achat)
     {
-        menu(inv,liste_objet);
+        menu(inv,liste_objet,&gold);
     }
     
 
