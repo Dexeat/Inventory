@@ -75,9 +75,10 @@ void create(objet liste[10]){
     {
         if (liste[i].nombre == 0)
         {
-            objet objetc = {nomobjet, 999, prixobejt};
             printf("L'objet : %s est en %d d'exmplaire(s) au prix de %d gold\n",nomobjet,999,prixobejt);
-            liste[i] = objetc;
+
+            liste[i].nombre = 999;
+            liste[i].prix = prixobejt;
             return 0;
         }
         
